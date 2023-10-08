@@ -18,7 +18,7 @@ Join me on my coding journey as I learn Python and build various projects along 
 
 ## Acknowledgments
 
-I express my gratitude to the open-source community and fellow coding enthusiasts who inspire and support my journey in tinkering with personal projects.
+I express my gratitude to the open-source community and fellow coding enthusiasts who inspire and support my journey, and Replit for providing their ["100 Days of Python"](https://replit.com/learn/100-days-of-python/) platform.
 
 ## Explore More
 
