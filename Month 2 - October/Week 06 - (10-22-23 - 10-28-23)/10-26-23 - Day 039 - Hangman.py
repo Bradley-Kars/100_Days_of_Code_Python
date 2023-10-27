@@ -49,7 +49,7 @@ while True:
     wrong_guesses += 1
     pass
   if set(correctly_guessed) == unique_letters:
-    if wrong_guesses > 5:
+    if wrong_guesses < 5:
       print(f"\nCongratulations, you've guessed all the letters in {tries} tries!")
       break
     else:
