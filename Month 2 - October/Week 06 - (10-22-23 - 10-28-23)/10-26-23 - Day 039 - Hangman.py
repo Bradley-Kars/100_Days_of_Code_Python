@@ -54,4 +54,6 @@ while True:
       break
     else:
       print(f"\nGood try but you lost, you've guessed all the letters in {tries} tries!")
+      print()
+      display_hangman(wrong_guesses)
       break
