@@ -19,7 +19,7 @@ while True:
     except ValueError:
         print("Invalid input. Please enter a valid number between 0 and 999,999.")
   f.write(f"{initials} {score_input}\n")
-  keep_going = input("Do you have another score to input?: ")
+  keep_going = input("Do you have another score to input?: ").lower().strip()
   if keep_going != "yes":
     break
 
