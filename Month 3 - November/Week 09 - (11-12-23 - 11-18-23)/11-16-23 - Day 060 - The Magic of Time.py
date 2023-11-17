@@ -10,7 +10,7 @@ event_date = datetime.strptime(event_date, "%m-%d-%Y").date()
 time_difference = event_date - todays_date
 
 if int(time_difference.days) > 0:
-  print(f"Looks liek your event is in {time_difference.days} days.")
+  print(f"Looks like your event is in {time_difference.days} days.")
 elif int(time_difference.days) < 0:
   print(f"Looks like that happaned {abs(time_difference.days)} days ago.")
 else:
