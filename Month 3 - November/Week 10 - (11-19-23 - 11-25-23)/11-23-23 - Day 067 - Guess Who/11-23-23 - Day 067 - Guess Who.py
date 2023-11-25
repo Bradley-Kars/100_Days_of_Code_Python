@@ -32,9 +32,9 @@ class GuessWhoApp:
       person = self.text.get("1.0", "end").lower().strip()
 
       if person in self.images:
-          self.canvas.itemconfig(self.container, image=self.images[person])
+        self.canvas.itemconfig(self.container, image=self.images[person])
       else:
-          self.label["text"] = "Unable to find this user"
+        self.label["text"] = "Unable to find this user"
 
 def main():
   root = tk.Tk()
