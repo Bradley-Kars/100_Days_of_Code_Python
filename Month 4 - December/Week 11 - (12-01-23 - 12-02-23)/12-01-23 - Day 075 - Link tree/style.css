@@ -1,0 +1,64 @@
+body {
+  background-color: #1e1e1e;
+  color: #ecf0f1;
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.person,
+.socials,
+.resume {
+  flex: 0 0 75%;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background-color: #333;
+}
+
+.person img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h2,
+.resume p,
+.socials li {
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  color: #fff;
+}
+
+a:hover {
+  color: #4caf50;
+}
+
+/* Center the content within the socials and resume sections */
+.socials ul,
+.resume ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
