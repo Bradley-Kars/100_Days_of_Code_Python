@@ -1,5 +1,4 @@
 from replit import db
-
 from flask import Flask, render_template
 
 def populate_db():
