@@ -1,0 +1,77 @@
+/* Light Mode CSS */
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+}
+
+.blog-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 2em; /* Adjust the font size as needed */
+    margin-bottom: 20px;
+}
+
+.blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minimum card width */
+    gap: 20px;
+}
+
+.blog-entry {
+    background-color: #333333;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    text-align: left;
+    text-decoration: none; /* Remove underline from links */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* Required for absolute positioning */
+}
+
+.blog-entry:hover {
+    background-color: #444444;
+}
+
+h2, p {
+    color: #ffffff; /* Set text color to white */
+    margin: 0;
+}
+
+h2 {
+    text-align: center; /* Center title horizontally */
+}
+
+p {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+/* Dark Mode CSS */
+body.dark-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.blog-title.dark-mode {
+    color: #000000;
+}
+
+.blog-entry.dark-mode {
+    background-color: #f0f0f0;
+    color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-entry.dark-mode:hover {
+    background-color: #e0e0e0;
+}
+
+h2.dark-mode, p.dark-mode {
+    color: #000000;
+}
