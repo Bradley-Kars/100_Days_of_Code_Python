@@ -38,6 +38,10 @@ def signup():
 
     return render_template('signup.html')
 
+@app.route('/logout')
+def logout():
+    return redirect(url_for('login'))
+
 @app.route('/dashboard')
 def dashboard():
     if 'username' in session:
