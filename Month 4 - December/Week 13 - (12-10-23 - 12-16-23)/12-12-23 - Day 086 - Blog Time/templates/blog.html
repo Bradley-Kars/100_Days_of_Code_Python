@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #61dafb;
+        }
+
+        .login-btn {
+            color: #61dafb;
+            text-decoration: none;
+            margin-left: 1em;
+        }
+
+        main {
+            padding: 1em;
+        }
+
+        section.blog-posts {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        article {
+            margin-bottom: 1em;
+            padding: 1em;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #444;
+        }
+      
+        .hidden-section {
+            display: none;
+        }
+
+        /* Styles for the posting form */
+        .hidden-section form {
+            margin-top: 1em;
+        }
+
+        .hidden-section label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        .hidden-section input,
+        .hidden-section textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .hidden-section button {
+            background-color: #61dafb;
+            color: #fff;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Blog</h1>
+        <a class="login-btn" href="{{ url_for('logout') }}">Logout</a>
+    </header>
+
+    <main>
+        <section class="blog-posts">
+        </section>
+
+        {% if can_post %}
+            <section class="hidden-section">
+                <h2>Create a New Post</h2>
+                <!-- Form for posting -->
+                <form method="post" action="{{ url_for('post') }}">
+                    <label for="post-title">Title:</label>
+                    <input type="text" id="post-title" name="post_title" required>
+
+                    <label for="post-body">Body:</label>
+                    <textarea id="post-body" name="post_body" rows="4" required></textarea>
+
+                    <button type="submit">Post</button>
+                </form>
+            </section>
+        {% endif %}
+    </main>
+</body>
+</html>
