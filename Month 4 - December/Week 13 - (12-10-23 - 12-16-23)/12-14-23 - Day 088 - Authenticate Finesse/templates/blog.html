@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00bcd4;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        #loginButton {
+            background-color: #00bcd4;
+            color: #222;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blog</h1>
+
+    <div>
+        <button id="loginButton" onclick="LoginWithReplit()">Login with Replit</button>
+    </div>
+    
+    {% if blog_posts %}
+        {% for post in blog_posts %}
+            <div class="post">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.body }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No posts yet.</p>
+    {% endif %}
+</body>
+<script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+</html>
