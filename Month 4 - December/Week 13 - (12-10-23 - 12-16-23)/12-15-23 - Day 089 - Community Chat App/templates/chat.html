@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .card {
+            background-color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            background-color: #212529;
+            color: #fff;
+        }
+
+        .admin-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Chat Room</h2>
+
+                        <!-- Admin Button -->
+                        {% if is_admin %}
+                            <a href="/admin" class="btn btn-success admin-button">Admin</a>
+                        {% endif %}
+
+                        <div>
+                            {% for message in chat_messages %}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="{{ message.profile_image }}" alt="Profile Pic" style="width: 30px; height: 30px; border-radius: 50%;">
+                                        <strong>{{ message.username }}</strong>: {{ message.message }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <input type="text" class="form-control" id="message" name="message" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

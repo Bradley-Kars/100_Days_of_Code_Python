@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .card {
+            background-color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            background-color: #212529;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Admin Panel</h2>
+                        <div>
+                            {% for message in chat_messages %}
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="{{ message.profile_image }}" alt="Profile Pic" style="width: 30px; height: 30px; border-radius: 50%;">
+                                        <strong>{{ message.username }}</strong>: {{ message.message }}
+                                        <a href="{{ url_for('delete_message', message_index=loop.index - 1) }}" class="btn btn-danger btn-sm float-right">Delete</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
