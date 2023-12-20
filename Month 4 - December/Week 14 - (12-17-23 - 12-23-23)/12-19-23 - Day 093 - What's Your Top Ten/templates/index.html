@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Songs by Year</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: #61dafb;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            color: #61dafb;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #61dafb;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4fa3d1;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top Songs by Year</h1>
+    <form method="post">
+        <label for="year">Enter a Year:</label>
+        <input type="text" id="year" name="year" required>
+        <button type="submit">Go</button>
+    </form>
+
+    {% if songs %}
+        <h2>Top 10 Songs of {{ year }}</h2>
+        <ul>
+            {% for song in songs %}
+                <li>
+                    {{ song['name'] }} - {{ song['artists'][0]['name'] }}
+                    <audio controls>
+                        <source src="{{ song['preview_url'] }}" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
