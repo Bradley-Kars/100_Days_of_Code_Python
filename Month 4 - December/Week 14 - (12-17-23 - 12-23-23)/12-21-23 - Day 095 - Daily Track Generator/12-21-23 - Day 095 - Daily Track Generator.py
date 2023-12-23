@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from summa import keywords
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import warnings
 
 newsapi_key = "newsapi"
 spotify_client_id = "spotify_id"
